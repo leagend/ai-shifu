@@ -111,10 +111,9 @@ ernie_enabled = False
 if get_config("ERNIE_API_ID") and get_config("ERNIE_API_SECRET"):
     ernie_enabled = True
     ERNIE_MODELS = get_erine_models(current_app)
+    current_app.logger.info(f"ernie models: {ERNIE_MODELS}")
 else:
     current_app.logger.warning("ERNIE_API_ID and ERNIE_API_SECRET not configured")
-
-current_app.logger.info(f"ernie models: {ERNIE_MODELS}")
 
 # ark
 ark_enabled = False
